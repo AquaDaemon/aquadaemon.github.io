@@ -223,7 +223,7 @@ h2 {
   background-color: #2b2b2b;
 }
 
-.site-footer p { margin: 0; }
+.site-footer p { margin: 0; }\n\n.donate-line {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n\n.donate-line img {\n  display: block;\n  max-height: 22px;\n  width: auto;\n}
 
 @media (min-width: 760px) {
   .project-grid {
