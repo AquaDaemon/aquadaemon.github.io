@@ -1,0 +1,119 @@
+
+/*
+console.log('Running header');
+const currentUrl = window.location.href;
+const currentPathname = window.location.pathname;
+const pageName = currentPathname.split("/").pop();
+
+console.log("Full URL:", currentUrl);
+console.log("Pathname:", currentPathname);
+console.log("Page name:", pageName);
+*/
+
+const currentPathname = window.location.pathname;
+//const pageName = currentPathname.split("/").pop();
+
+const pageName = currentPathname.split("/").slice(-2, -1).toString();
+
+let pshome = "";
+let psoverview = "";
+let psdetails = "";
+let pspurchase = "";
+let psdocs = "";
+let psfaq = "";
+
+switch (pageName) {
+  case "overview":
+    psoverview = " class='current'";
+    break;
+  case "details":
+    psdetails = " class='current'";
+    break;
+  case "docs":
+    psdocs = " class='current'";
+    break;
+  case "purchase":
+    pspurchase = " class='current'";
+    break;
+  case "faq":
+    psfaq = " class='current'";
+    break;
+  case "":
+  default:
+    pshome = " class='current'";
+    break;
+}
+
+// "<img src='/img/logo.png' width='237' height='46' alt='AqualinkD'>"+
+try {
+  const header = document.getElementById('header');
+
+  header.innerHTML = "<div class='flexbox'>" +
+    "<div class='center-on-mobiles'>" +
+    "<h1>" +
+    "<a href='/' class='logo'>" +
+    //"<span class='sr-only'>AqualinkD</span>" +
+    "<span style=\"font-family: 'Arial'\">AqualinkD</span>" +
+    "</a>" +
+    "</h1>" +
+    "</div> " +
+    "<nav class='main-nav hide-on-mobiles'>" +
+    "<ul>" +
+    "<li" + pshome + "><a href='/'>Home</a></li>" +
+    "<li" + psoverview + "><a href='/overview/'>Overview</a></li>" +
+    "<li" + psdocs + "><a href='/docs/'>Docs</a></li>" +
+    "<li" + psfaq + "><a href='/faq/'>FAQ</a></li>" +
+    "<li><a href='https://github.com/AquaDaemon' target='_blank' rel='noopener'>GitHub</a></li>" +
+    "</ul>" +
+    "</nav>" +
+    "</div>" +
+
+    "<nav class='mobile-nav show-on-mobiles'>" +
+    "<ul>" +
+    "<li" + pshome + "><a href='/'>Home</a></li>" +
+    //"<li" + psoverview + "><a href='/overview/'>Overview</a></li>" +
+    "<li" + psdocs + "><a href='/docs/'>Docs</a></li>" +
+    "<li" + psfaq + "><a href='/faq/'>FAQ</a></li>" +
+    "<li><a href='https://github.com/AquaDaemon' target='_blank' rel='noopener'>GitHub</a></li>" +
+    "</ul>" +
+    "</nav>";
+} catch (e) { }
+
+try {
+  const footer = document.getElementById('footer');
+
+  footer.innerHTML = "<div class='grid'>" +
+    "<div class='unit whole center-on-mobiles''>" +
+    "<p>If you like this project, please consider donating <a href=' https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=SEGN9UNS38TXJ'" +
+    "rel='nofollow'><img " +
+    "src='https://img.shields.io/badge/Donate-PayPal-blue.svg'" +
+    "alt='Donate' data-canonical-src='/img/paypal.svg'" +
+    "style='max-width: 100%;'></a>" +
+    "</p>" +
+       "<p><a href='/safety-and-legal/'>Safety & Legal</a></p>" +
+    "</div>" +
+    "<div class='unit two-thirds center-on-mobiles'>" +
+ 
+    "<p>AqualinkD is actively maintained in <a href='https://github.com/aqualinkd/'>core repos</a> free under the " +
+    "terms of the <a href='https://github.com/aqualinkd/AqualinkD/blob/master/LICENSE.md'>GPLv2 licensing</a>.</p>" +
+    "</div>" +
+    "<div class='unit one-third align-right center-on-mobiles'>" +
+    "<p>" +
+    "Hosted by <a href='https://github.com'> • GitHub</a>" +
+    "</p>" +
+    "</div>" +
+    "</div>";
+} catch (e) { }
+
+
+/*
+//<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b4dd62e89df4456f8df2e97ab636a41b"}'></script>
+// <!-- End Cloudflare Web Analytics -->
+*/
+
+const script = document.createElement('script');
+script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+script.defer = true;
+script.setAttribute('data-cf-beacon', '{"token": "b4dd62e89df4456f8df2e97ab636a41b"}');
+document.body.appendChild(script);
