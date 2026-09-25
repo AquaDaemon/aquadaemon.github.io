@@ -27,7 +27,7 @@
   --link-hover: #f90;
   --border: #555;
   --background: #333;
-  --surface: #2b2b2b;
+  --surface: #444;
 }
 
 * { box-sizing: border-box; }
@@ -39,14 +39,24 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);\n  color: var(--text);\n  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  background: var(--background);
+  color: var(--text);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.625;
 }
 
 a {
-  color: var(--link);\n  text-decoration: none;\n  transition: color .25s;
+  color: var(--link);
+  text-decoration: none;
+  transition: color .25s;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+  text-decoration: none;
 }
 
 .wrap {
@@ -66,18 +76,20 @@ a {
 }
 
 .brand {
-  color: #fff;\n  font-size: 1.35rem;
+  color: #fff;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: .01em;
 }
 
 .github-link {
-  color: var(--link);\n  font-size: .9rem;
+  color: var(--link);
+  font-size: .9rem;
 }
 
 .github-link:hover,
-.github-link:focus,
-a:hover {\n  color: var(--link-hover);
+.github-link:focus {
+  color: var(--link-hover);
 }
 
 .hero {
@@ -94,15 +106,23 @@ a:hover {\n  color: var(--link-hover);
   text-transform: uppercase;
 }
 
-h1, h2, h3 {
-  font-weight: 300;
+h1,
+h2,
+h3 {
   line-height: 1.2;
 }
 
 h1 {
   margin: 0 0 20px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
   letter-spacing: -.03em;
+}
+
+h2 {
+  font-weight: 300;
 }
 
 .hero .lead {
@@ -130,21 +150,29 @@ h1 {
   font-size: 2rem;
 }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
 .project-card {
   display: block;
-  margin: 0 0 18px;
   padding: 27px 30px;
   border: 1px solid #555;
-  border-left: 4px solid transparent;\n  box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
-  background: #333;\n  color: #ddd;
+  border-left: 4px solid transparent;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+  background: var(--surface);
+  color: #ddd;
   transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
 }
 
- .project-card:hover,
+.project-card:hover,
 .project-card:focus-visible {
   border-left-color: var(--link);
   box-shadow: 0 4px 18px rgba(30, 55, 85, .08);
-  transform: translateX(2px);
+  transform: translateY(-2px);
   outline: none;
 }
 
@@ -157,13 +185,14 @@ h1 {
 
 .project-card h3 {
   margin: 0;
+  color: var(--link);
   font-size: 1.55rem;
   font-weight: 700;
 }
 
 .project-subtitle {
   margin: 3px 0 12px;
-  color: var(--link);
+  color: #ddd;
   font-size: .9rem;
 }
 
@@ -193,6 +222,12 @@ h1 {
 }
 
 .site-footer p { margin: 0; }
+
+@media (min-width: 760px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 568px) {
   .wrap { width: calc(100% - 30px); }
