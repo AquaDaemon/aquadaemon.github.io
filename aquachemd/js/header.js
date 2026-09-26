@@ -37,7 +37,7 @@ try {
   navlinks += "<a href=\"https://aquadaemon.org\">AquaDaemon</a>";
 
   header.innerHTML = "<div class=\"wrap nav\">" +
-      "<a class=\"brand\" href=\"./\">AquaChemD</a>" +
+      "<a class=\"brand\" href=\"/aquachemd/\">AquaChemD</a>" +
       "<nav class=\"navlinks\">" +
       navlinks +
       "</nav>" +
