@@ -30,7 +30,7 @@
       <p class="lead">Open-source, automated pool water chemistry — pH, ORP, and dosing, done right.</p>
       <p>A lightweight Linux daemon for Raspberry Pi that reads pool-water sensors, controls dosing equipment, publishes
         state through MQTT and provides a built-in web interface.</p>
-      <p><a href="getting-started/">Get started →</a> &nbsp; <a href="docs/">Explore the documentation →</a></p>
+      <p><a href="docs/getting-started/">Get started →</a> &nbsp; <a href="docs/">Explore the documentation →</a></p>
     </div>
     <section class="wrap content">
       <h2>What it does</h2>
@@ -75,41 +75,41 @@
       <p>AquaChemD's documented approach is transparent: use a configurable lookup table rather than hiding the dosing
         decision behind a generic formula. The project's real-world tuning notes explain how a pool-specific table was
         developed and monitored.</p>
-      <p><a href="dosing/">Read the dosing strategy →</a></p>
+      <p><a href="docs/dosing/">Read the dosing strategy →</a></p>
       <h2>Safety</h2>
       <p>Dosing is not treated as simply turning a pump on. MQTT and GPIO interlocks can gate dosers, sensors can be
         scoped to conditions, and dose runtime and total-volume limits provide additional protection against unexpected
         readings or equipment behavior.</p>
       <h2>Quick install</h2>
       <div class="code">curl -fsSL https://aquadaemon.org/aquachemd/install.sh | sudo bash</div>
-      <p>See <a href="getting-started/">Getting Started</a> for prerequisites and first configuration.</p>
+      <p>See <a href="docs/getting-started/">Getting Started</a> for prerequisites and first configuration.</p>
       <h2>Documentation</h2>
       <div class="card-grid">
-        <a class="card" href="getting-started/">
+        <a class="card" href="docs/getting-started/">
           <h3>Getting Started →</h3>
           <p>Installation, prerequisites, service control and first configuration.</p>
         </a>
-        <a class="card" href="hardware/">
+        <a class="card" href="docs/hardware/">
           <h3>Hardware →</h3>
           <p>Sensors, dosing pumps, GPIO, MQTT and physical hardware.</p>
         </a>
-        <a class="card" href="flow-cell/">
+        <a class="card" href="docs/flow-cell/">
           <h3>Flow Cell →</h3>
           <p>Commercial and DIY flow-cell design notes.</p>
         </a>
-        <a class="card" href="api/">
+        <a class="card" href="docs/api/">
           <h3>API →</h3>
           <p>HTTP and MQTT interfaces and commands.</p>
         </a>
-        <a class="card" href="ui/">
+        <a class="card" href="docs/ui/">
           <h3>Web / App UI →</h3>
           <p>Dashboard, scheduler and management interface.</p>
         </a>
-        <a class="card" href="homeassistant/">
+        <a class="card" href="docs/homeassistant/">
           <h3>Home Assistant →</h3>
           <p>MQTT discovery and entity guidance.</p>
         </a>
-        <a class="card" href="homekit/">
+        <a class="card" href="docs/homekit/">
           <h3>HomeKit →</h3>
           <p>HomeKit mappings and integration options.</p>
         </a>
