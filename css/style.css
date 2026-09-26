@@ -158,6 +158,7 @@ h2 {
 }
 
 .project-card {
+  position: relative;
   display: block;
   padding: 27px 30px;
   border: 1px solid #555;
@@ -169,12 +170,50 @@ h2 {
   transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
 }
 
-.project-card:hover,
-.project-card:focus-visible {
+.project-card:hover {
   border-left-color: var(--link);
   box-shadow: 0 4px 18px rgba(30, 55, 85, .08);
   transform: translateY(-2px);
-  outline: none;
+}
+
+.project-card-main {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.project-card-main:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+.project-card-content {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.project-card-github {
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+  margin-top: 16px;
+  padding: 3px 9px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background: #393939;
+  color: var(--link);
+  font-size: .78rem;
+  line-height: 1.5;
+  pointer-events: auto;
+}
+
+.project-card-github:hover,
+.project-card-github:focus {
+  border-color: var(--link);
+  background: #333;
+  color: var(--link-hover);
 }
 
 .project-card-heading {
@@ -210,8 +249,7 @@ h2 {
   transition: transform .15s ease;
 }
 
-.project-card:hover .project-arrow,
-.project-card:focus-visible .project-arrow {
+.project-card:hover .project-arrow {
   transform: translateX(4px);
 }
 
