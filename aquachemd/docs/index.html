@@ -19,40 +19,46 @@
   </header>
 -->
   <main class="wrap content">
+    <div class="docs-layout">
+      <div class="docs-mobile" id="mobilemenu"></div>
+      <aside class="docs-sidebar" id="menu"></aside>
+      <article class="doc-content">
     <div class="breadcrumbs"><a href="../">AquaChemD</a> / Documentation</div>
     <h1>Documentation</h1>
     <p class="lead">Installation, hardware, dosing, interfaces and integration information drawn from the AquaChemD
       project documentation.</p>
-    <div class="card-grid"><a class="card" href="../getting-started/">
+    <div class="card-grid"><a class="card" href="getting-started/">
         <h3>Getting Started</h3>
         <p>Install AquaChemD, enable the required Raspberry Pi interfaces, configure devices and troubleshoot the
           service.</p>
-      </a><a class="card" href="../hardware/">
+      </a><a class="card" href="hardware/">
         <h3>Hardware</h3>
         <p>Supported sensors, dosing pumps, pressure sensors, GPIO hardware, MQTT sources and the recommended physical
           setup.</p>
-      </a><a class="card" href="../dosing/">
+      </a><a class="card" href="dosing/">
         <h3>Dosing Strategy</h3>
         <p>The project's real-world lookup-table approach, calibration method and recorded dosing results.</p>
-      </a><a class="card" href="../flow-cell/">
+      </a><a class="card" href="flow-cell/">
         <h3>Flow Cell Design</h3>
         <p>Evaluation of commercial and DIY flow-cell arrangements, including the project's vertical DIY design.</p>
-      </a><a class="card" href="../api/">
+      </a><a class="card" href="api/">
         <h3>API</h3>
         <p>HTTP and MQTT state, commands, device IDs and integration conventions.</p>
-      </a><a class="card" href="../ui/">
+      </a><a class="card" href="ui/">
         <h3>Web & App UI</h3>
         <p>Dashboard, scheduler, management console and examples of HomeKit and Home Assistant presentation.</p>
-      </a><a class="card" href="../homeassistant/">
+      </a><a class="card" href="homeassistant/">
         <h3>Home Assistant</h3>
         <p>Entity metadata and the project's guidance for chemistry, dosing and safety entities.</p>
-      </a><a class="card" href="../homekit/">
+      </a><a class="card" href="homekit/">
         <h3>HomeKit</h3>
         <p>HomeKit mappings and the practical workarounds used for pool chemistry values.</p>
       </a></div>
     <div class="notice"><strong>Source documentation:</strong> The full, working documents remain in the <a
         href="https://github.com/aqualinkd/AquachemD/tree/main/docs">AquachemD repository</a>. This website is a
       presentation layer and will not replace the repository as the authoritative source.</div>
+  </article>
+    </div>
   </main>
   <footer class="site-footer">
     <div class="wrap">
@@ -65,6 +71,7 @@
 
   <footer id="footer"></footer>
   <script src="../js/header.js?ver=1.1"></script>
+  <script src="../js/docsMenu.js?ver=1.0"></script>
   <script src="../js/expandImages.js?ver=1.1"></script>
 
 </html>
