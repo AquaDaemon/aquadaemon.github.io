@@ -1,35 +1,139 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AquaChemD — Open Source Pool Water Chemistry</title>
-<meta name="description" content="AquaChemD is an open-source Linux daemon for automated pool water chemistry, pH, ORP, sensors, dosing and home automation integration.">
-<link rel="canonical" href="https://aquadaemon.org/aquachemd/"><link rel="stylesheet" href="css/aquachemd.css"></head>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AquaChemD — Open Source Pool Water Chemistry</title>
+  <meta name="description"
+    content="AquaChemD is an open-source Linux daemon for automated pool water chemistry, pH, ORP, sensors, dosing and home automation integration.">
+  <link rel="canonical" href="https://aquadaemon.org/aquachemd/">
+  <link rel="stylesheet" href="css/aquachemd.css">
+</head>
+
 <body>
-<header class="site-header"><div class="wrap nav"><a class="brand" href="./">AquaChemD</a><nav class="navlinks"><a href="docs/">Documentation</a><a href="faq/">FAQ</a><a href="https://github.com/aqualinkd/AquachemD">GitHub</a><a href="https://aquadaemon.org/">AquaDaemon</a></nav></div></header>
-<main><div class="wrap hero"><div class="eyebrow">AquaDaemon project</div><h1>AquaChemD</h1><p class="lead">Open-source, automated pool water chemistry — pH, ORP, and dosing, done right.</p><p>A lightweight Linux daemon for Raspberry Pi that reads pool-water sensors, controls dosing equipment, publishes state through MQTT and provides a built-in web interface.</p><p><a href="getting-started/">Get started →</a> &nbsp; <a href="docs/">Explore the documentation →</a></p></div>
-<section class="wrap content">
-<h2>What it does</h2><div class="card-grid">
-<div class="card"><h3>Reads real sensors</h3><p>pH and ORP through Atlas Scientific EZO I2C circuits, temperature through EZO, DS18B20 or MQTT, pressure through supported I2C or sysfs sensors, plus generic Linux sensor inputs.</p></div>
-<div class="card"><h3>Controls dosing</h3><p>Configurable pH/ORP threshold tables, rolling averages, per-dose runtime limits, dose-volume limits and a water-topup channel.</p></div>
-<div class="card"><h3>Interlocks first</h3><p>Dosing is gated by MQTT and GPIO conditions. Conditions can also delay when sensor readings become trusted after circulation starts.</p></div>
-<div class="card"><h3>MQTT native</h3><p>Publishes sensors, pump state, dose statistics, tank levels and safety conditions with Home Assistant MQTT Discovery support.</p></div>
-<div class="card"><h3>Built-in web UI</h3><p>Monitor sensors, operate pumps, trigger doses, edit configuration and manage cron-based dosing schedules from the daemon itself.</p></div>
-<div class="card"><h3>Home automation</h3><p>Designed to integrate with AqualinkD, Home Assistant, HomeKit and other systems through MQTT and the documented HTTP API.</p></div></div>
-<h2>Designed for real pool hardware</h2><p>The project documents support for Atlas Scientific EZO circuits, GPIO relay-driven dosing pumps, flow/level switches, pressure sensors, Dallas 1-Wire temperature probes and external MQTT sources. Its flow-cell work covers commercial cells and a DIY clear-PVC bypass design.</p>
-<div class="image-placeholder">AquaChemD dashboard / hardware photograph — image to be added</div>
-<h2>Dosing strategy</h2><p>AquaChemD's documented approach is transparent: use a configurable lookup table rather than hiding the dosing decision behind a generic formula. The project's real-world tuning notes explain how a pool-specific table was developed and monitored.</p><p><a href="dosing/">Read the dosing strategy →</a></p>
-<h2>Safety</h2><p>Dosing is not treated as simply turning a pump on. MQTT and GPIO interlocks can gate dosers, sensors can be scoped to conditions, and dose runtime and total-volume limits provide additional protection against unexpected readings or equipment behavior.</p>
-<h2>Quick install</h2><div class="code">curl -fsSL https://aquadaemon.org/aquachemd/install.sh | sudo bash</div><p>See <a href="getting-started/">Getting Started</a> for prerequisites and first configuration.</p>
-<h2>Documentation</h2><div class="card-grid">
-<a class="card" href="getting-started/"><h3>Getting Started →</h3><p>Installation, prerequisites, service control and first configuration.</p></a>
-<a class="card" href="hardware/"><h3>Hardware →</h3><p>Sensors, dosing pumps, GPIO, MQTT and physical hardware.</p></a>
-<a class="card" href="flow-cell/"><h3>Flow Cell →</h3><p>Commercial and DIY flow-cell design notes.</p></a>
-<a class="card" href="api/"><h3>API →</h3><p>HTTP and MQTT interfaces and commands.</p></a>
-<a class="card" href="ui/"><h3>Web / App UI →</h3><p>Dashboard, scheduler and management interface.</p></a>
-<a class="card" href="homeassistant/"><h3>Home Assistant →</h3><p>MQTT discovery and entity guidance.</p></a>
-<a class="card" href="homekit/"><h3>HomeKit →</h3><p>HomeKit mappings and integration options.</p></a>
-<a class="card" href="faq/"><h3>FAQ →</h3><p>Common questions about installation, sensors, dosing and integrations.</p></a></div>
-<div class="notice"><strong>Source of truth:</strong> AquaChemD's source code, README and full documentation remain in the <a href="https://github.com/aqualinkd/AquachemD">GitHub repository</a>. This site presents that material in a public-facing form.</div>
-</section></main>
-<footer class="site-footer"><div class="wrap"><div class="footer-nav"><a href="../">AquaDaemon</a><a href="docs/">Documentation</a><a href="faq/">FAQ</a><a href="https://github.com/aqualinkd/AquachemD">GitHub</a></div><p>AquaChemD is part of AquaDaemon.</p></div></footer>
-</body></html>
+  <header class="site-header" id="header">
+    <div class="wrap nav">
+      <a class="brand" href="./">AquaChemD</a>
+      <nav class="navlinks">
+        <a href="docs/">Documentation</a>
+        <a href="faq/">FAQ</a>
+        <a href="https://github.com/aqualinkd/AquachemD">GitHub</a>
+        <a href="https://aquadaemon.org/">AquaDaemon</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="wrap hero">
+      <div class="eyebrow">AquaDaemon project</div>
+      <h1>AquaChemD</h1>
+      <p class="lead">Open-source, automated pool water chemistry — pH, ORP, and dosing, done right.</p>
+      <p>A lightweight Linux daemon for Raspberry Pi that reads pool-water sensors, controls dosing equipment, publishes
+        state through MQTT and provides a built-in web interface.</p>
+      <p><a href="getting-started/">Get started →</a> &nbsp; <a href="docs/">Explore the documentation →</a></p>
+    </div>
+    <section class="wrap content">
+      <h2>What it does</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Reads real sensors</h3>
+          <p>pH and ORP through Atlas Scientific EZO I2C circuits, temperature through EZO, DS18B20 or MQTT, pressure
+            through supported I2C or sysfs sensors, plus generic Linux sensor inputs.</p>
+        </div>
+        <div class="card">
+          <h3>Controls dosing</h3>
+          <p>Configurable pH/ORP threshold tables, rolling averages, per-dose runtime limits, dose-volume limits and a
+            water-topup channel.</p>
+        </div>
+        <div class="card">
+          <h3>Interlocks first</h3>
+          <p>Dosing is gated by MQTT and GPIO conditions. Conditions can also delay when sensor readings become trusted
+            after circulation starts.</p>
+        </div>
+        <div class="card">
+          <h3>MQTT native</h3>
+          <p>Publishes sensors, pump state, dose statistics, tank levels and safety conditions with Home Assistant MQTT
+            Discovery support.</p>
+        </div>
+        <div class="card">
+          <h3>Built-in web UI</h3>
+          <p>Monitor sensors, operate pumps, trigger doses, edit configuration and manage cron-based dosing schedules
+            from the daemon itself.</p>
+        </div>
+        <div class="card">
+          <h3>Home automation</h3>
+          <p>Designed to integrate with AqualinkD, Home Assistant, HomeKit and other systems through MQTT and the
+            documented HTTP API.</p>
+        </div>
+      </div>
+      <h2>Designed for real pool hardware</h2>
+      <p>The project documents support for Atlas Scientific EZO circuits, GPIO relay-driven dosing pumps, flow/level
+        switches, pressure sensors, Dallas 1-Wire temperature probes and external MQTT sources. Its flow-cell work
+        covers commercial cells and a DIY clear-PVC bypass design.</p>
+      <div class="image-placeholder">AquaChemD dashboard / hardware photograph — image to be added</div>
+      <h2>Dosing strategy</h2>
+      <p>AquaChemD's documented approach is transparent: use a configurable lookup table rather than hiding the dosing
+        decision behind a generic formula. The project's real-world tuning notes explain how a pool-specific table was
+        developed and monitored.</p>
+      <p><a href="dosing/">Read the dosing strategy →</a></p>
+      <h2>Safety</h2>
+      <p>Dosing is not treated as simply turning a pump on. MQTT and GPIO interlocks can gate dosers, sensors can be
+        scoped to conditions, and dose runtime and total-volume limits provide additional protection against unexpected
+        readings or equipment behavior.</p>
+      <h2>Quick install</h2>
+      <div class="code">curl -fsSL https://aquadaemon.org/aquachemd/install.sh | sudo bash</div>
+      <p>See <a href="getting-started/">Getting Started</a> for prerequisites and first configuration.</p>
+      <h2>Documentation</h2>
+      <div class="card-grid">
+        <a class="card" href="getting-started/">
+          <h3>Getting Started →</h3>
+          <p>Installation, prerequisites, service control and first configuration.</p>
+        </a>
+        <a class="card" href="hardware/">
+          <h3>Hardware →</h3>
+          <p>Sensors, dosing pumps, GPIO, MQTT and physical hardware.</p>
+        </a>
+        <a class="card" href="flow-cell/">
+          <h3>Flow Cell →</h3>
+          <p>Commercial and DIY flow-cell design notes.</p>
+        </a>
+        <a class="card" href="api/">
+          <h3>API →</h3>
+          <p>HTTP and MQTT interfaces and commands.</p>
+        </a>
+        <a class="card" href="ui/">
+          <h3>Web / App UI →</h3>
+          <p>Dashboard, scheduler and management interface.</p>
+        </a>
+        <a class="card" href="homeassistant/">
+          <h3>Home Assistant →</h3>
+          <p>MQTT discovery and entity guidance.</p>
+        </a>
+        <a class="card" href="homekit/">
+          <h3>HomeKit →</h3>
+          <p>HomeKit mappings and integration options.</p>
+        </a>
+        <a class="card" href="faq/">
+          <h3>FAQ →</h3>
+          <p>Common questions about installation, sensors, dosing and integrations.</p>
+        </a>
+      </div>
+      <div class="notice"><strong>Source of truth:</strong> AquaChemD's source code, README and full documentation
+        remain in the <a href="https://github.com/aqualinkd/AquachemD">GitHub repository</a>. This site presents that
+        material in a public-facing form.</div>
+    </section>
+  </main>
+  <footer class="site-footer" id="footer">
+    <div class="wrap">
+      <div class="footer-nav"><a href="../">AquaDaemon</a><a href="docs/">Documentation</a><a href="faq/">FAQ</a><a
+          href="https://github.com/aqualinkd/AquachemD">GitHub</a></div>
+      <p>AquaChemD is part of AquaDaemon.</p>
+    </div>
+  </footer>
+</body>
+
+  <footer id="footer"></footer>
+  <script src="js/header.js?ver=1.1"></script>
+  <script src="js/expandImages.js?ver=1.1"></script>
+
+</html>
