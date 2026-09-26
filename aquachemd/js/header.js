@@ -32,13 +32,20 @@ const currentPathname = window.location.pathname;
 const currentFullPath = getDirectoryPath(currentPathname);   // if needed in future
 const currentTopLevelPath = getTopLevelPath(currentPathname);
 
+
+/*
+ * *******************************************
+ * Add Header information
+ *
+ */
+
 try {
   const header = document.getElementById('header');
 
   let navlinks = "";
 
   for (const item of items) {
-    console.log(item.directory, item.text, currentFullPath, currentTopLevelPath);
+    //console.log(item.directory, item.text, currentFullPath, currentTopLevelPath);
     if (item.directory == currentTopLevelPath) {
       navlinks += "<a class=\"navlink-current\" href=\"" + item.directory + "\">" + item.text +"</a>";
     } else {
@@ -49,7 +56,11 @@ try {
   navlinks += "<a href=\"https://aquadaemon.org\">AquaDaemon</a>";
 
   header.innerHTML = "<div class=\"wrap nav\">" +
-      "<a class=\"brand\" href=\"/aquachemd/\">AquaChemD</a>" +
+      //"<a class=\"brand\" href=\"/aquachemd/\">AquaChemD</a>" +
+      "<div class=\"brand-group\">" +
+      "  <img src=\"/images/aquachemd.png\" alt=\"\" class=\"brand-logo\">" +
+      "  <a class=\"brand\" href=\"/aquachemd\">AquaChemD</a>" +
+      "</div>" +
       "<nav class=\"navlinks\">" +
       navlinks +
       "</nav>" +
@@ -57,6 +68,30 @@ try {
 
 } catch (e) { }
 
+/*
+ * *******************************************
+ * Add not ready information
+ *
+ */
+
+try {
+  const breadcrumbs = document.querySelector(".breadcrumbs");
+
+  //const div = document.createElement("div");
+  //div.textContent = "These pages a quick reference and under construction, full information is as <a href=\"https://github.com/aqualinkd/AquachemD\">GitHub page</a>";
+
+  const div = document.createElement("div");
+  //div.className = "some-class";
+  div.innerHTML = 'These pages are a quick reference and still under construction, full information is on the <a href="https://github.com/aqualinkd/AquachemD">GitHub page</a>';
+
+  breadcrumbs.insertAdjacentElement("afterend", div);
+} catch (e) { }
+
+/*
+ * *******************************************
+ * Add Footer information
+ *
+ */
 
 try {
   const footer = document.getElementById('footer');
