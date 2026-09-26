@@ -18,7 +18,19 @@ function getDirectoryPath(pathname) {
         : pathname;
 }
 
-const currentPathname = getDirectoryPath(window.location.pathname);
+function getTopLevelPath(pathname) {
+    const parts = pathname.split("/").filter(Boolean);
+
+    if (parts.length < 2) {
+        return pathname.replace(/\/$/, "") || "/";
+    }
+
+    return "/" + parts[0] + "/" + parts[1];
+}
+
+const currentPathname = window.location.pathname;
+const currentFullPath = getDirectoryPath(currentPathname);   // if needed in future
+const currentTopLevelPath = getTopLevelPath(currentPathname);
 
 try {
   const header = document.getElementById('header');
@@ -26,8 +38,8 @@ try {
   let navlinks = "";
 
   for (const item of items) {
-    console.log(item.directory, item.text, currentPathname);
-    if (item.directory == currentPathname) {
+    console.log(item.directory, item.text, currentFullPath, currentTopLevelPath);
+    if (item.directory == currentTopLevelPath) {
       navlinks += "<a class=\"navlink-current\" href=\"" + item.directory + "\">" + item.text +"</a>";
     } else {
       navlinks += "<a href=\"" + item.directory + "\">" + item.text +"</a>";
