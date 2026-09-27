@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://aquadaemon.org/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/docs/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/docs/getting-started/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/docs/hardware/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/docs/flow-cell/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/docs/dosing/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/docs/api/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/docs/ui/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/docs/homeassistant/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/docs/homekit/</loc></url>
+  <url><loc>https://aquadaemon.org/aquachemd/faq/</loc></url>
+</urlset>
