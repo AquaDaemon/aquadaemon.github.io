@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Flow Cell Design — AquaChemD</title>
+  <title>System Design — AquaChemD</title>
   <meta name="description"
     content="AquaChemD flow-cell documentation covering commercial flow cells and the project's DIY pool-water flow-cell design.">
   <link rel="canonical" href="https://aquadaemon.org/aquachemd/docs/flow-cell/">
@@ -19,7 +19,77 @@
       <div class="docs-mobile" id="mobilemenu"></div>
       <aside class="docs-sidebar" id="menu"></aside>
       <article class="doc-content">
-        <div class="breadcrumbs"><a href="../../">Documentation</a> / Flow Cell Design</div>
+        <div class="breadcrumbs"><a href="../../">Documentation</a> / System Design</div>
+        <h1>Mounting Sensors</h1>
+        The biggest hurdle in getting started is probably how to mount the sensors and/or doser.
+        There are a few options, below are some diagrams showing the main methods and connection points.
+
+
+        <h3 class="section-title">Inline</h3>
+        Sensors are mounted inline in the main flow, (usually 2" pipe)
+        <div class="card-grid">
+          <div class="card-plane">
+            Pros
+            <ul>
+              <li>Simplest installation — no bypass plumbing required</li>
+              <li>Sensors always in the primary flow stream</li>
+              <li>Fewest components and potential leak points on the bypass side</li>
+            </ul>
+          </div>
+          <div class="card-plane">
+            Cons
+            <ul>
+              <li>High flow velocity causes turbulence around sensor tips, affecting pH and ORP accuracy</li>
+              <li>A failed fitting or loose sensor is a significant leak on the main line.</li>
+              <li>Probes are exposed to the full force and debris of the pool's flow. can significantly shorten their lifespan.</li>
+            </ul>
+          </div>
+        </div>
+        <img src="Sensors Inline.png" alt="Sensors inline">
+
+        <h3 class="section-title">Flow Cell</h3>
+        Sensors are mounted in a flow cell
+        <div class="card-grid">
+          <div class="card-plane">
+            Pros
+            <ul>
+              <li>Controlled low-velocity flow gives more stable sensor readings</li>
+              <li>Clear acrylic provides visual confirmation of water flow</li>
+              <li>Most major manufactures use a flow cell design</li>
+            </ul>
+          </div>
+          <div class="card-plane">
+            Cons
+            <ul>
+              <li>Cost: $80–$350 depending on model</li>
+              <li>Limited ports / expandability</li>
+              <li>Usually needs UV protection</li>
+            </ul>
+          </div>
+        </div>
+        <img src="Sensors Flow Cell.png" alt="Sensors in a flow cell">
+
+        <h3 class="section-title">Bypass</h3>
+        Sensors are mounted in a bypass tube
+        <div class="card-grid">
+          <div class="card-plane">
+            Pros
+            <ul>
+              <li>Controlled low-velocity flow gives more stable sensor readings</li>
+              <li>Cheap DIY install</li>       
+            </ul>
+          </div>
+          <div class="card-plane">
+            Cons
+            <ul>
+              <li>Most complex and evasive install</li>
+              <li>Can be hard to make fit due to size</li>
+            </ul>
+          </div>
+        </div>
+        <img src="Sensors Bypass.png" alt="Sensors bypass">
+
+<!--
         <h1>Flow Cell Design</h1>
         <p class="lead">AquaChemD's notes compare four ways to mount pH, ORP and temperature sensors, then document a
           DIY low-flow bypass design.</p>
@@ -69,6 +139,9 @@
           <li>Ball valves for isolation and flow control</li>
           <li>Atlas Scientific EZO-pH, EZO-ORP and EZO-RTD with isolated carrier boards</li>
         </ul>
+      -->
+        <h2>More Details</h2>
+        There variations of these designs and more details in the below
         <p><a href="https://github.com/aqualinkd/AquachemD/blob/main/docs/flow%20cell%20design.md">Read the complete
             design notes on GitHub.</a></p>
       </article>

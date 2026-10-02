@@ -192,6 +192,26 @@ a:focus {
   color: #ccc
 }
 
+.card-plane {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid transparent;
+  border-radius: 8px;
+  padding: 4px;
+  color: var(--text);
+  transition: .15s
+}
+
+.card-plane ul {
+  padding-top: 0px;
+  margin: 0;
+  /*line-height: 1em;*/
+  margin-bottom: 0.0em;
+  /*padding: 0.2em;*/
+  line-height: 1.2em;
+}
+
 .notice {
   padding: 18px 22px;
   margin: 24px 0;
@@ -391,4 +411,8 @@ img {
     display: block;
     margin-bottom: 24px;
   }
+}
+
+.section-title {
+  margin-bottom: 0;
 }

@@ -1,11 +1,12 @@
 // AquaChemD documentation navigation
 const menuItems = {
   "Getting Started": [
+    { directory: "/aquachemd/docs/system-design", text: "System Design" },
     { directory: "/aquachemd/docs/getting-started", text: "Getting Started" }
   ],
   "Hardware": [
     { directory: "/aquachemd/docs/hardware", text: "Hardware" },
-    { directory: "/aquachemd/docs/flow-cell", text: "Flow Cell Design" }
+    //{ directory: "/aquachemd/docs/flow-cell", text: "Flow Cell Design" }
   ],
   "Dosing": [
     { directory: "/aquachemd/docs/dosing", text: "Dosing Strategy" }
