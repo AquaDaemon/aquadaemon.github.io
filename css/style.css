@@ -211,7 +211,7 @@ h2 {
   display: inline-block;
   position: relative;
   z-index: 3;
-  margin-top: 9px;
+  /*margin-top: 9px;*/
   padding: 3px 9px;
   border: 1px solid #666;
   border-radius: 4px;
@@ -236,10 +236,38 @@ h2 {
   gap: 20px;
 }
 
+.project-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 9px;
+}
+.project-info img {
+  flex: 0 0 auto;
+  height: 62px;
+  width: 62px;
+  padding: 2px;
+  box-sizing: border-box;
+  /*background-color: #333;*/
+  background-color: #2b2b2b;
+  border-radius: 6px;
+}
+.project-info h3,
+.project-info p {
+  margin: 0;
+}
+
 .project-card h3 {
   margin: 0;
   color: var(--link);
   font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.project-card h4 {
+  margin: 0;
+  color: var(--link);
+  font-size: 1.45rem;
   font-weight: 700;
 }
 
